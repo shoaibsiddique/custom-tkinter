@@ -1,0 +1,1 @@
+This code creates a dark mode GUI window with a custom title and window of size as defined.
