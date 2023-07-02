@@ -7,10 +7,10 @@ class App:
     def __init__(self, root):
         self.root = root
         self.serial_port = SerialPort()
-        self.connection_frame = tk.Frame(self.root)
+        self.connection_frame = ctk.CTkFrame(self.root)
         self.connection_frame.pack()
 
-        self.connection_combo = ttk.Combobox(self.connection_frame, values=get_ports())
+        self.connection_combo = ctk.CTkComboBox(self.connection_frame, values=get_ports())
         self.connection_combo.pack(padx=5, pady=5)
 
         self.connect_button = ctk.CTkButton(self.connection_frame, text="Connect", command=self.toggle_connection)
@@ -19,7 +19,7 @@ class App:
         self.connection_checkbox = ctk.CTkCheckBox(self.connection_frame)
         self.connection_checkbox.pack(padx=5, pady=5)
 
-        self.connection_indicator = tk.Canvas(self.connection_frame, width=24, height=24)
+        self.connection_indicator = ctk.CTkCanvas(self.connection_frame, width=24, height=24)
         self.connection_indicator.pack(padx=5, pady=5)
         self.indicator_rect = self.connection_indicator.create_oval(2, 2, 22, 22, fill="red")  # padding of 2 units
 
