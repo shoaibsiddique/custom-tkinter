@@ -28,6 +28,7 @@ def connect():
     global arduino
 
     selected_port_name = selected_port.get()
+    print(selected_port_name)
     if selected_port_name:
         if not connected:
             try:
